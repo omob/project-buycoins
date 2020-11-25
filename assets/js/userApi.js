@@ -1,4 +1,4 @@
-import config from "./config.js";
+import config from "../../config.js";
 
 const apiEndpoint = "https://api.github.com/graphql";
 
@@ -37,9 +37,7 @@ const getProfileInfo = async () => {
 
   try {
     const response = await queryFetch(query);
-    const data = await response.json();
-
-    return data;
+    return await response.json();
   } catch (error) {
     console.log("Error ", error);
     return;
@@ -75,17 +73,11 @@ const getRepositoriesInfo = async (number_of_repos) => {
 
   try {
     const response = await queryFetch(query, { number_of_repos });
-    const data = await response.json();
-
-    console.log(data);
+    return await response.json();
   } catch (error) {
     console.log("Error ", error);
     return;
   }
 };
 
-const init = async () => {
-  getRepositoriesInfo(10);
-  getProfileInfo();
-};
-init();
+export { getProfileInfo, getRepositoriesInfo };
