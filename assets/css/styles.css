@@ -349,6 +349,25 @@ ul li {
   margin-top: 10px;
 }
 
+.repo-description {
+  font-size: 14px;
+}
 .text-gray {
   color: #586069;
+}
+
+.topic-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  border: 1px solid transparent;
+  border-radius: 2em;
+  padding: 0 10px;
+  line-height: 22px;
+  color: #0366d6;
+  background-color: #f1f8ff;
+}
+.topic-tag:hover {
+  background-color: #e4f1fd;
 }

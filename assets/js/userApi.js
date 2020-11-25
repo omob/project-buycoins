@@ -52,16 +52,20 @@ const getRepositoriesInfo = async (number_of_repos) => {
             nodes {
                 name
                 description
-                projectsUrl
+                url
                 updatedAt
                 forkCount
                 stargazerCount
-                repositoryTopics(first: 10) {
-                nodes {
-                    topic {
-                    name
-                    }
+                repositoryTopics(first: 4) {
+                  nodes {
+                      topic {
+                        name
+                      }
+                  }
                 }
+                primaryLanguage {
+                  color
+                  name
                 }
                 isPrivate
             }
