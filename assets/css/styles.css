@@ -21,6 +21,7 @@ header {
 .flex-1 {
   flex: 1;
 }
+
 header .header-item {
   display: flex;
   margin-right: 16px;
@@ -64,26 +65,32 @@ label {
   justify-content: space-around;
   border-radius: 6px;
 }
+
+header label .form-control {
+  background-color: #24292e;
+  border: none;
+}
+
+header label .form-control::placeholder {
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
 .form-control {
   padding: 5px 12px;
   font-size: 14px;
   line-height: 20px;
   color: #fff;
-  background-color: #24292e;
-
+  border: 1px solid #dadada;
   outline: none;
-  border: none;
-}
-::placeholder {
-  color: #fff;
-  opacity: 1; /* Firefox */
+  border-radius: 6px;
 }
 
 nav {
   font-weight: 600;
 }
 
-nav a {
+header nav a {
   margin-right: 16px;
   padding: 16px 0;
 }
@@ -137,4 +144,211 @@ nav a:hover {
   vertical-align: middle;
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(--color-avatar-border);
+}
+.container {
+  width: 100%;
+  padding: 0 16px;
+  max-width: 1280px;
+  margin: auto;
+}
+.flex {
+  display: flex;
+}
+.w-100 {
+  width: 100%;
+}
+.w-75 {
+  width: 75%;
+}
+.w-25 {
+  width: 25%;
+}
+.pt-1 {
+  padding-top: 1em;
+}
+.pt-2 {
+  padding-top: 2em;
+}
+
+.px-2 {
+  padding: 0 16px;
+}
+.mr-1 {
+  margin-right: 10px;
+}
+.mr-2 {
+  margin-right: 16px;
+}
+.mr-3 {
+  margin-right: 16px;
+}
+.ml-3 {
+  margin-left: 16px;
+}
+.mt-1 {
+  margin-top: 1em;
+}
+.mt-2 {
+  margin-top: 2em;
+}
+.mb-2 {
+  margin-bottom: 16px;
+}
+
+.sticky-div {
+  display: flex;
+  margin-top: 26px;
+  border-bottom: 1px solid #e1e4e8;
+  padding: 10px;
+}
+
+.sticky-div .profile {
+  width: 25%;
+}
+
+main > div {
+  /* padding: 20px; */
+}
+
+/* main nav */
+.underlined-nav-body {
+}
+
+.underlined-navitem {
+  padding: 8px 16px;
+  padding-bottom: 15px;
+  font-size: 14px;
+  line-height: 30px;
+  color: #24292e;
+  text-align: center;
+  white-space: nowrap;
+  background-color: initial;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.36s ease-in;
+  font-weight: 400;
+}
+
+.underlined-navitem:hover {
+  border-bottom-color: #cecece;
+}
+
+.underlined-navitem.selected {
+  border-bottom: 2px solid;
+  border-bottom-color: #f9826c !important;
+  font-weight: 600;
+}
+
+.underline-nav-octicon {
+  color: #959da5;
+}
+.counter {
+  display: inline-block;
+  min-width: 20px;
+  padding: 0 6px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  color: #d1d5da80;
+  text-align: center;
+  background-color: #d1d5da80;
+  border: 1px solid transparent;
+  border-radius: 2em;
+}
+.underlined-navitem .counter {
+  margin-left: 4px;
+  color: #24292e;
+}
+
+.repo-section {
+  /* background-color: orange; */
+}
+
+@media (max-width: 768px) {
+  .hide-sm {
+    display: none !important;
+  }
+  .flex-1-sm {
+    flex: 1;
+  }
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+summary.btn {
+  color: #24292e;
+  background-color: #fafbfc;
+  border-color: #1b1f2326;
+}
+summary i {
+  color: #797979;
+  font-style: normal;
+}
+summary.btn:hover {
+  background-color: #ececec;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.btn-primary {
+  background-color: #2a8f47;
+  color: #fff;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+.user-repositories-list li {
+  border-top: 1px solid rgb(231, 231, 231);
+  border-bottom: 1px solid rgb(231, 231, 231);
+  width: 100%;
+  padding: 25px 0;
+}
+.repo-language-color {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #1b1f231a;
+  border-radius: 50%;
+}
+.repo-title {
+  margin: 0px;
+  color: #0366d6;
+  font-weight: 500;
+}
+.repo-detail {
+  color: #586069;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.text-gray {
+  color: #586069;
 }
