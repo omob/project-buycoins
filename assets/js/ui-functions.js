@@ -1,3 +1,5 @@
+import { getRepositoriesInfo } from "./userApi.js";
+
 const generateRepoMarkUp = (repositories) => {
   let repoMarkup = "";
 
@@ -113,4 +115,28 @@ const generateRepoMarkUp = (repositories) => {
   return repoMarkup;
 };
 
-export { generateRepoMarkUp };
+const setRepositoriesCount = (count) => {
+  const repositoryCount = document.querySelector("span.total-repositories");
+
+  repositoryCount.setAttribute("title", count);
+  repositoryCount.textContent = count;
+};
+
+const populateRepositoryList = async () => {
+  const userRepoList = document.querySelector(".user-repositories-list ul");
+
+  const result = await getRepositoriesInfo(20);
+
+  if (!result) return;
+
+  const {
+    data: {
+      viewer: { repositories },
+    },
+  } = result;
+
+  userRepoList.innerHTML = generateRepoMarkUp(repositories);
+  setRepositoriesCount(repositories.totalCount);
+};
+
+export { generateRepoMarkUp, populateRepositoryList, setRepositoriesCount };
