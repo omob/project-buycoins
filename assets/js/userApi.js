@@ -56,7 +56,7 @@ const getRepositoriesInfo = async (number_of_repos) => {
                 updatedAt
                 forkCount
                 stargazerCount
-                repositoryTopics(first: 4) {
+                repositoryTopics(first: 8) {
                   nodes {
                       topic {
                         name

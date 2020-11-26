@@ -137,7 +137,7 @@
                 here
             </div>
             <div class="repo-section flex-1 px-2 mr-2">
-                <div class="pt-1 flex mr-2">
+                <div class="pt-1 flex">
                     <div class="flex-1 mr-2">
                         <input type="search" class="form-control w-100" placeholder="Find a repository..." />
                     </div>
@@ -174,32 +174,71 @@
 
                 <div class="user-repositories-list mt-1">
                     <ul>
-                        <li>
-                            <div>
+                        <!-- <li class="flex">
+                            <div class="flex-1">
                                 <h3 class="repo-title">
-                                    <a href="">
-                                        TodoappVuew
+                                    <a href="${url}">
+                                        Todo App
                                     </a>
                                 </h3>
-                                <!-- description -->
+                                
                                 <div class="repo-description">
                                     <p class="text-gray w-75 mb-2 pr-4" itemprop="description">
-                                        React Native Application from Mosh Hamedani
+                                        This is a sample app for a Todo
                                     </p>
                                 </div>
+                                <div class="topics">
+                                    <a class="topic-tag" href="">JavaScript</a>
+                                </div>
+
                                 <div class="repo-detail">
                                     <span class="ml-0 mr-3">
-                                        <span class="repo-language-color" style="background-color: #2c3e50"></span>
-                                        <span itemprop="programmingLanguage">Vue</span>
+                                        <span class="repo-language-color" style="background-color: red"></span>
+                                        <span itemprop="programmingLanguage">
+                                            Vue.js
+                                        </span>
                                     </span>
+                                    <span>
+                                        <a class="muted-link mr-3" href="${url}/stargazers">
+                                            <svg aria-label="star" class="octicon octicon-star" viewBox="0 0 16 16"
+                                                version="1.1" width="16" height="16" role="img">
+                                                <path fill-rule="evenodd"
+                                                    d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z">
+                                                </path>
+                                            </svg>
+                                            4
+                                        </a>
+                                    </span>
+
+                                    <a class="muted-link mr-3" href="/omob/LMS-FRONTEND/network/members">
+                                        <svg aria-label="fork" class="octicon octicon-repo-forked" viewBox="0 0 16 16"
+                                            version="1.1" width="16" height="16" role="img">
+                                            <path fill-rule="evenodd"
+                                                d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z">
+                                            </path>
+                                        </svg>
+                                        4
+                                    </a>
+
                                     Updated
-                                    <relative-time datetime="2020-11-25T02:30:00Z" class="no-wrap"
-                                        title="Nov 25, 2020, 3:30 AM GMT+1">7 hours ago
-                                    </relative-time>
+                                    <relative-time datetime="${updatedAt}" class="no-wrap" title="${updatedAt}">
+                                        yesterday </relative-time>
                                 </div>
                             </div>
-                            <div></div>
-                        </li>
+                            <div>
+                                <button class="star btn btn-sm text-muted">
+                                    <svg aria-label="star" class="octicon octicon-star" viewBox="0 0 16 16"
+                                        version="1.1" width="16" height="16" role="img">
+                                        <path fill-rule="evenodd"
+                                            d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z">
+                                        </path>
+                                    </svg>
+                                    Star
+                                </button>
+
+                            </div>
+                        </li> -->
+                        <p class="text-muted">Loading...</p>
                     </ul>
                 </div>
             </div>

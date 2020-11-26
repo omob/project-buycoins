@@ -43,7 +43,7 @@ header #logo {
   vertical-align: text-bottom;
 }
 
-.octicon:hover {
+header .octicon:hover {
   fill: gray;
 }
 
@@ -66,6 +66,22 @@ label {
   border-radius: 6px;
 }
 
+.label-outline {
+  color: #586069;
+  border-color: #e1e4e8;
+}
+
+.label {
+  display: inline-block;
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 2em;
+  background-color: initial !important;
+  border: 1px solid transparent;
+  border-color: var(--color-label-border);
+}
 header label .form-control {
   background-color: #24292e;
   border: none;
@@ -182,6 +198,9 @@ nav a:hover {
 .mr-3 {
   margin-right: 16px;
 }
+.ml-1 {
+  margin-left: 4px;
+}
 .ml-3 {
   margin-left: 16px;
 }
@@ -191,10 +210,16 @@ nav a:hover {
 .mt-2 {
   margin-top: 2em;
 }
+.mb-1 {
+  margin-bottom: 4px;
+}
 .mb-2 {
   margin-bottom: 16px;
 }
 
+.v-align-middle {
+  vertical-align: middle !important;
+}
 .sticky-div {
   display: flex;
   margin-top: 26px;
@@ -278,16 +303,15 @@ details summary::-webkit-details-marker {
 
 summary.btn {
   color: #24292e;
-  background-color: #fafbfc;
-  border-color: #1b1f2326;
 }
 summary i {
   color: #797979;
   font-style: normal;
 }
-summary.btn:hover {
-  background-color: #ececec;
+.btn:hover {
+  background-color: #f2f2f3;
 }
+
 .btn {
   position: relative;
   display: inline-block;
@@ -302,17 +326,35 @@ summary.btn:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid;
+  border: 1px solid #1b1f2326;
   border-radius: 6px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-color: #fafbfc;
+  color: #24292e;
 }
 
 .btn-primary {
   background-color: #2a8f47;
   color: #fff;
 }
+.btn-primary:hover {
+  background-color: #237a3c;
+}
+.text-muted {
+  color: #797979;
+}
+
+.btn-sm {
+  padding: 3px 12px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+/* .btn .octicon {
+  color: #6a737d;
+} */
 
 ul {
   margin: 0;
@@ -356,6 +398,13 @@ ul li {
   color: #586069;
 }
 
+.topics {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
 .topic-tag {
   display: inline-block;
   font-size: 12px;
@@ -367,7 +416,10 @@ ul li {
   line-height: 22px;
   color: #0366d6;
   background-color: #f1f8ff;
+  margin: 1px 2px 1px 0;
 }
 .topic-tag:hover {
   background-color: #e4f1fd;
+}
+.btn.star {
 }
