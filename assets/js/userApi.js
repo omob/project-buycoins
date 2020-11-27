@@ -24,13 +24,17 @@ const getProfileInfo = async () => {
             avatarUrl
             bio
             followers {
-            totalCount
+              totalCount
             }
             following {
-            totalCount
+              totalCount
             }
             email
             location
+            starredRepositories {
+              totalCount
+            }
+            login
         }
     }
 `;
