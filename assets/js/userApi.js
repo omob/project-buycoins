@@ -1,4 +1,4 @@
-// import config from "../../config.js";s
+import config from "../../config.js";
 
 const apiEndpoint = "https://api.github.com/graphql";
 
@@ -7,7 +7,7 @@ const queryFetch = async (query, variables) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `bearer aeb45b6ba741816d40bcbf98e9fb095976f57ca3`,
+      Authorization: `bearer ${config.token}`,
     },
     body: JSON.stringify({
       query,
