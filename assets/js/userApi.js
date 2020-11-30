@@ -7,7 +7,7 @@ const queryFetch = async (query, variables) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `bearer ${config.token}`,
+      Authorization: `bearer ${process.env.access_token}`,
     },
     body: JSON.stringify({
       query,
