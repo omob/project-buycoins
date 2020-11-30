@@ -13,7 +13,17 @@
 
 <body>
     <header>
-        <div class="header-item flex-1-sm">
+        <div class="header-item d-md-none">
+            <button class="header-link" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24"
+                    aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="header-item flex-1-sm justify-content-center">
             <a href="#" id="logo">
                 <svg class="octicon" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
                     <path fill-rule="evenodd"
@@ -73,10 +83,17 @@
         </div>
     </header>
     <main class="">
-        <div class="sticky-div">
+        <div class="sticky-div d-none d-md-block">
             <div class="container flex w-100">
                 <div class="profile hide-sm w-25">
-
+                    <div class="user-profile-mini hidden d-table flex align-items-center">
+                        <span class="user-profile-mini-avatar user-avatar pr-2">
+                            <img class="img-rounded avatar-user" height="32" width="32" alt="" src="">
+                        </span>
+                        <span class="ml-1">
+                            <strong class="user-profile-logon-name"></strong>
+                        </span>
+                    </div>
                 </div>
                 <div class="nav flex-1">
                     <div class="underline-nav flex w-100 box-shadow-none">
@@ -124,18 +141,29 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <div class="container flex">
-            <div class="profile-section w-25 ">
-                <!-- <div class="profile-image mx-2">
+        <div class="container d-md-flex">
+            <div class="profile-section w-25">
+                <!-- <div class="flex d-md-none p-1">
+                    <div style="width: 16%">
+                        <img class="img-responsive img-rounded"
+                            src="https://avatars1.githubusercontent.com/u/8108084?s=460&u=4517d73ad4e5f0a20947ce167ffd76bf8523ea01&v=4" />
+                    </div>
+                    <div class="mr-2">
+                        <h1 class="m-0 pt-1 username px-2">
+                            <span class="fullname">Ayodeji Abodunrin</span>
+                            <span class="username">omob</span>
+                        </h1>
+                    </div>
+                </div>
+                <div class="profile-image mx-2 hide-sm">
                     <a href="">
                         <img class="img-responsive img-rounded"
                             src="https://avatars1.githubusercontent.com/u/8108084?s=460&u=4517d73ad4e5f0a20947ce167ffd76bf8523ea01&v=4" />
                     </a>
                 </div>
                 <div class="px-2">
-                    <h1 class="m-0 pt-1 username">
+                    <h1 class="m-0 pt-1 username hide-sm">
                         <span class="fullname">Ayodeji Abodunrin</span>
                         <span class="username">omob</span>
                     </h1>
@@ -189,31 +217,83 @@
                     </ul>
                 </div> -->
             </div>
-            <div class="repo-section flex-1 px-2 mr-2">
-                <div class="pt-1 flex">
-                    <div class="flex-1 mr-2">
+            <div class="repo-section flex-1 px-2 mr-2 ">
+                <div class=" d-md-none nav-wrapper mt-2">
+                    <div class="nav flex-1">
+                        <div class="underline-nav flex w-100 box-shadow-none">
+                            <nav class="underline-nav-body" aria-label="User profile">
+                                <a class="underlined-navitem " href="">
+                                    <svg class="octicon octicon-book underline-nav-octicon hide-sm" height="16"
+                                        viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z">
+                                        </path>
+                                    </svg>
+                                    Overview
+                                </a>
+                                <a aria-current="page" class="underlined-navitem selected "
+                                    href="/omob?tab=repositories">
+                                    <svg class="octicon octicon-repo underline-nav-octicon hide-sm" height="16"
+                                        viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z">
+                                        </path>
+                                    </svg>
+                                    Repositories
+                                    <span title="27" class="counter total-repositories">27</span>
+                                </a>
+                                <a class="underlined-navitem " href="/omob?tab=projects">
+                                    <svg class="octicon octicon-project underline-nav-octicon hide-sm" height="16"
+                                        viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M1.75 0A1.75 1.75 0 000 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0016 14.25V1.75A1.75 1.75 0 0014.25 0H1.75zM1.5 1.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25V1.75zM11.75 3a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75zm-8.25.75a.75.75 0 011.5 0v5.5a.75.75 0 01-1.5 0v-5.5zM8 3a.75.75 0 00-.75.75v3.5a.75.75 0 001.5 0v-3.5A.75.75 0 008 3z">
+                                        </path>
+                                    </svg>
+                                    Projects
+                                    <span title="0" hidden="hidden" class="Counter ">0</span>
+                                </a>
+                                <a class="underlined-navitem " href="/omob?tab=packages">
+                                    <svg class="octicon octicon-package underline-nav-octicon hide-sm" height="16"
+                                        viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z">
+                                        </path>
+                                    </svg>
+                                    Packages
+                                </a>
+                            </nav>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="pt-1 d-md-flex">
+                    <div class="flex-1 repo-search">
                         <input type="search" class="form-control w-100" placeholder="Find a repository..." />
                     </div>
                     <div class="filter-button flex">
-                        <details class="position-relative mr-1" id="type-options">
-                            <summary class="btn" aria-haspopup="menu" role="button">
-                                <i>Type:</i>
-                                <span data-menu-button="">
-                                    All
-                                </span>
-                                <span class="dropdown-caret"></span>
-                            </summary>
-                        </details>
-                        <details class="position-relative " id="type-options">
-                            <summary class="btn" aria-haspopup="menu" role="button">
-                                <i>Language:</i>
-                                <span data-menu-button="">
-                                    All
-                                </span>
-                                <span class="dropdown-caret"></span>
-                            </summary>
-                        </details>
-                        <a href="/new" class="text-center btn btn-primary ml-3 ">
+                        <div class="flex flex-1">
+                            <details class="position-relative mr-1">
+                                <summary class="btn" role="button">
+                                    <i>Type:</i>
+                                    <span data-menu-button="">
+                                        All
+                                    </span>
+                                    <span class="dropdown-caret"></span>
+                                </summary>
+                            </details>
+                            <details class="position-relative ">
+                                <summary class="btn" aria-haspopup="menu" role="button">
+                                    <i>Language:</i>
+                                    <span data-menu-button="">
+                                        All
+                                    </span>
+                                    <span class="dropdown-caret"></span>
+                                </summary>
+                            </details>
+
+                        </div>
+                        <a href="/new" class="text-center btn btn-primary ml-3 flex ">
                             <svg class="octicon octicon-repo" height="16" viewBox="0 0 16 16" version="1.1" width="16"
                                 aria-hidden="true">
                                 <path fill-rule="evenodd"

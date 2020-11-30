@@ -28,11 +28,25 @@ header {
   flex: 1;
 }
 
+.flex-auto {
+  flex: auto;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
 header .header-item {
   display: flex;
   margin-right: 16px;
   align-items: center;
   white-space: nowrap;
+}
+
+.header-link {
+  background-color: initial;
+  color: #fff;
+  border: none;
 }
 
 .header-search {
@@ -246,9 +260,31 @@ nav a:hover {
   display: flex;
   margin-top: 26px;
   border-bottom: 1px solid #e1e4e8;
-  padding: 10px;
+  padding: 5px;
 }
 
+.user-profile-mini-avatar {
+  width: 32px;
+}
+
+.scroll {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1;
+  margin-top: 0;
+  padding: 5px;
+  padding-top: 20px;
+}
+
+.img-rounded {
+  border-radius: 50%;
+}
+
+.z-index-2 {
+  z-index: 10;
+}
 .img-responsive {
   width: 100%;
 }
@@ -279,6 +315,11 @@ main > div {
   font-weight: 400;
 }
 
+@media (max-width: 550px) {
+  .underlined-navitem {
+    padding: 8px 4px;
+  }
+}
 .underlined-navitem:hover {
   border-bottom-color: #cecece;
 }
@@ -314,7 +355,7 @@ main > div {
   /* background-color: orange; */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hide-sm {
     display: none !important;
   }
@@ -453,6 +494,13 @@ ul li {
 .profile-section {
   position: relative;
   top: -20px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .profile-section {
+    top: 0 !important;
+  }
 }
 
 .profile-section h1 > span {
@@ -494,4 +542,40 @@ span.username {
 
 .v-card .octicon {
   margin-right: 4px;
+}
+.d-none {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+.nav-wrapper {
+  border-bottom: 1px solid #e1e4e8;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .repo-search {
+    margin-bottom: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .d-md-block {
+    display: block !important;
+  }
+  .d-md-flex {
+    display: flex !important;
+  }
+  .profile-section {
+    width: 25% !important;
+  }
+  .d-md-none {
+    display: none !important;
+  }
+  .repo-search {
+    margin-bottom: 0;
+    margin-right: 16px;
+  }
 }

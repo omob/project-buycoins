@@ -124,14 +124,28 @@ const generateProfileMarkup = ({
   starredRepositories: { totalCount: totalRepoStars },
   login: username,
 }) => {
-  return `<div class="profile-image mx-2">
+  return `    
+  
+                  <div class="flex d-md-none p-1">
+                    <div style="width: 16%">
+                        <img class="img-responsive img-rounded"
+                            src="${avatarUrl}" />
+                    </div>
+                    <div class="mr-2">
+                        <h1 class="m-0 pt-1 username px-2">
+                            <span class="fullname">Ayodeji Abodunrin</span>
+                            <span class="username">omob</span>
+                        </h1>
+                    </div>
+                </div>
+                <div class="profile-image mx-2 d-none d-md-block z-index-2 position-relative">
                     <a href="">
                         <img class="img-responsive img-rounded"
                             src="${avatarUrl}" />
                     </a>
                 </div>
                 <div class="px-2">
-                    <h1 class="m-0 pt-1 username">
+                    <h1 class="m-0 pt-1 username d-none d-md-block">
                         <span class="fullname">${name}</span>
                         <span class="username">${username}</span>
                     </h1>
@@ -229,6 +243,47 @@ const populateProfileSection = async () => {
   profileSection.innerHTML = generateProfileMarkup(user);
 
   setNavbarLoginUser(user);
+  navigationBarInfo(user);
 };
 
-export { populateRepositoryList, populateProfileSection };
+const navigationBarInfo = (userProfile) => {
+  const userProfileAvatar = document.querySelector(".user-avatar img");
+  const logonName = document.querySelector(".user-profile-logon-name");
+
+  userProfileAvatar.setAttribute("src", userProfile.avatarUrl);
+  userProfileAvatar.setAttribute("alt", userProfile.login);
+
+  logonName.textContent = userProfile.login;
+};
+
+const handleWindowScroll = () => {
+  const stickyNav = document.querySelector(".sticky-div");
+  const stickyNavwrapper = document.querySelector(".nav-wrapper");
+
+  const userProfileMini = document.querySelector(".user-profile-mini");
+
+  window.addEventListener("scroll", (x) => {
+    // desktop view sticky div
+    if (x.currentTarget.scrollY > 90) {
+      stickyNav.classList.add("scroll");
+    } else {
+      stickyNav.classList.remove("scroll");
+    }
+
+    // mobile view sticky div
+    if (x.currentTarget.scrollY > 376) {
+      stickyNavwrapper.classList.add("scroll");
+    } else {
+      stickyNavwrapper.classList.remove("scroll");
+    }
+
+    // user profile mini avatar
+    if (x.currentTarget.scrollY > 290) {
+      userProfileMini.classList.remove("hidden");
+    } else {
+      userProfileMini.classList.add("hidden");
+    }
+  });
+};
+
+export { populateRepositoryList, populateProfileSection, handleWindowScroll };
