@@ -201,10 +201,14 @@ const generateProfileMarkup = ({
 };
 
 const setRepositoriesCount = (count) => {
-  const repositoryCount = document.querySelector("span.total-repositories");
+  const repositoryCount = document.querySelector("#repo-count");
+  const repositoryCountSm = document.querySelector("#repo-count-sm");
 
   repositoryCount.setAttribute("title", count);
   repositoryCount.textContent = count;
+
+  repositoryCountSm.setAttribute("title", count);
+  repositoryCountSm.textContent = count;
 };
 
 const populateRepositoryList = async () => {
